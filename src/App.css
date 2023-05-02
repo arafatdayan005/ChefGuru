@@ -1,0 +1,16 @@
+.banner{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("./images/banner.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: calc(100vh - 96px);
+}
+
+.heading{
+    word-spacing: -10px;
+}
+
+.sub-heading{
+    word-spacing: 5px;
+}
