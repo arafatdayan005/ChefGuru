@@ -1,12 +1,16 @@
 import React from 'react'
+import logo from './logo.png'
+import Nav from './components/Nav'
+import { Outlet } from 'react-router-dom'
+import Footer from './components/Footer'
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </div>
+    <>
+      <Nav></Nav>
+      <Outlet></Outlet>
+      <Footer></Footer>
+    </>
   )
 }
 
