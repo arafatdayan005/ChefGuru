@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './components/Home';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Blogs from './components/Blogs';
+import Login from './components/Login';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/blogs',
+        element: <Blogs></Blogs>
       },
     ]
   }
