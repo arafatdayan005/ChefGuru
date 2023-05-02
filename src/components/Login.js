@@ -8,7 +8,7 @@ function Login() {
 
     return (
         <>
-            <div className='w-96 m-auto border-gray-500 mt-12 rounded-lg pb-8 shadow-lg shadow-red-500 px-4'>
+            <div className='w-96 m-auto mt-12 rounded-lg pb-8 shadow-lg shadow-red-500 px-4'>
                 <h2 className='text-center py-5 text-3xl text-red-400 font-extrabold '>Login</h2>
                 <div className="flex flex-col">
                     <form>
