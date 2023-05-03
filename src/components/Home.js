@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import image from './../images/about.png'
 import cook1 from './../images/cooking-1.jpg'
 import cook2 from './../images/cooking-2.jpg'
 import { Link } from 'react-router-dom'
+import ChefCards from './ChefCards'
 
 function Home() {
+    const [chefData, setChefData] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:5000/details")
+            .then(res => res.json())
+            .then(data => setChefData(data))
+    }, [])
+
     return (
         <>
             {/* Banner Section */}
@@ -32,6 +41,21 @@ function Home() {
                     <img className='absolute max-h-[110%] -top-7' src={image} alt="" />
                 </div>
             </section>
+            {/* Our Chefs Section */}
+            <section className='chefs py-20'>
+                <div className="text-center">
+                    <h3 className='text-4xl font-bold tracking-tighter text-red-500'>Our Chefs</h3>
+                    <h1 className='w-[50%] inline-block text-5xl font-bold font-serif my-8 text-white'>Check Our Best Chefs From Thailand</h1>
+                </div>
+
+                <div className='grid grid-cols-3 gap-8 mt-12 px-16'>
+                    {
+                        chefData.map(data => (
+                            <ChefCards key={data.id} data={data}></ChefCards>
+                        ))
+                    }
+                </div>
+            </section>
             {/* Special Deal Section */}
             <section className='my-20'>
                 <div className='text-center'>
@@ -52,7 +76,7 @@ function Home() {
                         </div>
                     </div>
                     <div className='flex justify-end'>
-                    <div className='max-w-[90%] h-full p-12 shadow-xl rounded-xl'>
+                        <div className='max-w-[90%] h-full p-12 shadow-xl rounded-xl'>
                             <h3 className='text-4xl font-serif font-semibold mb-6'>Over <span className='text-red-500 text-5xl'>250</span> Delicious & Tasty Recipes</h3>
                             <h4 className='text-2xl tracking-tighter font-semibold text-red-500'>Get 25% Discount</h4>
                             <h5 className='my-6 text-lg text-gray-500'>Our thai chefs are packed with energy and enthusiasm. Your dinner spread will never look, smell, or better. The recipes are for all seasons perfect for family gatherings and events</h5>
