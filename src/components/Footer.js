@@ -3,7 +3,7 @@ import icon from './../images/social.png'
 
 function Footer() {
     return (
-        <div className='bg-black mt-12 px-48 py-12'>
+        <div className='bg-black px-48 py-12'>
             <div className='grid grid-cols-6 gap-8'>
                 <div className='col-span-2 text-white'>
                     <h3 className='mb-6 text-3xl font-bold'>HOTCHEF</h3>

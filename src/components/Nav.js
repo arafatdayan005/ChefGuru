@@ -8,8 +8,8 @@ function Nav() {
             <div className='flex items-center'>
                 <img className='h h-24 w-32' src={Logo} alt="" />
                 <div>
-                    <p className='t text-2xl font-extrabold tracking-widest'>HOT</p>
-                    <p className='t text-2xl font-extrabold tracking-widest'>CHEF</p>
+                    <p className='text-2xl font-extrabold tracking-widest leading-none'>HOT</p>
+                    <p className='text-2xl font-extrabold tracking-widest lead leading-none'>CHEF</p>
                 </div>
             </div>
             <div className='space-x-8 font-bold tracking-wide text-xl'>
