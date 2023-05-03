@@ -8,6 +8,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Blogs from './components/Blogs';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Recipes from './components/Recipes';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,11 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/recipes/:id',
+        element: <Recipes></Recipes>,
+        loader: ({params}) => fetch(`http://localhost:5000/recipes/${params.id}`)
       },
       {
         path: '/login',

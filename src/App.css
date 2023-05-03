@@ -21,3 +21,11 @@
     background-position: center;
     background-size: cover;
 }
+
+.recipe{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("./images/recipebg.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
