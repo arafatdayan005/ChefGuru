@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Logo from './../logo.png'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../providers/AuthProvider'
 
 function Nav() {
@@ -25,15 +25,14 @@ function Nav() {
                 </div>
             </div>
             <div className='space-x-8 font-bold tracking-wide text-xl'>
-                <Link to="/">Home</Link>
-                <Link to="/blogs">Blogs</Link>
-                <Link to="/">Recipies</Link>
+                <NavLink className={({ isActive }) => isActive ? "underline" : ""} to="/">Home</NavLink>
+                <NavLink className={({ isActive }) => isActive ? "underline" : ""} to="/blogs">Blogs</NavLink>
+                <NavLink className={({ isActive }) => isActive ? "underline" : ""} to="/recipe">Recipies</NavLink>
             </div>
-            <div>
+            <div className='font-bold tracking-wide text-xl'>
                 {
-                    user ? <button onClick={handleLogOut}>logout</button>
-                        :
-                        <Link className='font-bold tracking-wide text-xl' to="/login">Login</Link>
+                    user ? <button onClick={handleLogOut}>logout</button> :
+                        <NavLink className={({ isActive }) => isActive ? "underline" : ""} to="/login">Login</NavLink>
                 }
 
             </div>
