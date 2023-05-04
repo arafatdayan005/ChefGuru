@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function ChefCards({ data }) {
     const { id, name, image, experiences, likes, recipes } = data
     return (
-        <div className='product text-white mb-8'>
+        <div className='text-white mb-8'>
             <img className='h-[70%] w-full rounded-xl' src={image} alt="" />
             <div className='flex relative'>
                 <div>
@@ -17,10 +17,8 @@ function ChefCards({ data }) {
                     <Link to={`/recipes/${id}`}>
                         <button className='px-8 bg-white text-red-500 py-4 font-bold rounded-full hover:bg-red-400 hover:text-white'>View Recipes</button>
                     </Link>
-
                 </div>
             </div>
-
         </div>
     )
 }
