@@ -11,6 +11,7 @@ import SignUp from './components/SignUp';
 import Recipes from './components/Recipes';
 import ErrorPage from './components/ErrorPage';
 import AuthProvider from './providers/AuthProvider';
+import PrivateRoute from './routes/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/recipes/:id',
-        element: <Recipes></Recipes>,
+        element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
         loader: ({ params }) => fetch(`https://madchef-server-arafatdayan005.vercel.app/recipes/${params.id}`)
       },
       {

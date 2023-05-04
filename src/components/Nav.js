@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Logo from './../logo.png'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../providers/AuthProvider'
 
 function Nav() {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                // An error happened.
+            });
+    }
+
     return (
         <div className='flex justify-between items-center bg-red-500 text-white'>
             <div className='flex items-center'>
@@ -17,7 +29,14 @@ function Nav() {
                 <Link to="/blogs">Blogs</Link>
                 <Link to="/">Recipies</Link>
             </div>
-            <Link className='font-bold tracking-wide text-xl' to="/login">Login</Link>
+            <div>
+                {
+                    user ? <button onClick={handleLogOut}>logout</button>
+                        :
+                        <Link className='font-bold tracking-wide text-xl' to="/login">Login</Link>
+                }
+
+            </div>
         </div>
     )
 }

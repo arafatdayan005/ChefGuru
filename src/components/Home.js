@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Circles } from 'react-loader-spinner'
 import image from './../images/about.png'
 import cook1 from './../images/cooking-1.jpg'
 import cook2 from './../images/cooking-2.jpg'
@@ -7,11 +8,13 @@ import ChefCards from './ChefCards'
 
 function Home() {
     const [chefData, setChefData] = useState([])
+    const [spinner, setSpinner] = useState(true)
 
     useEffect(() => {
         fetch("https://madchef-server-arafatdayan005.vercel.app/details")
             .then(res => res.json())
             .then(data => setChefData(data))
+        setSpinner(false)
     }, [])
 
     return (
@@ -50,9 +53,20 @@ function Home() {
 
                 <div className='grid grid-cols-3 gap-8 mt-12 px-16'>
                     {
-                        chefData.map(data => (
-                            <ChefCards key={data.id} data={data}></ChefCards>
-                        ))
+                        spinner ? <div className='flex justify-center'>
+                            <Circles
+                                height="80"
+                                width="80"
+                                color="#4fa94d"
+                                ariaLabel="circles-loading"
+                                wrapperStyle={{}}
+                                wrapperClass=""
+                                visible={true}
+                            />
+                        </div> :
+                            chefData.map(data => (
+                                <ChefCards key={data.id} data={data}></ChefCards>
+                            ))
                     }
                 </div>
             </section>
