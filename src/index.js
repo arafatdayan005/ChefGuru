@@ -9,11 +9,13 @@ import Blogs from './components/Blogs';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Recipes from './components/Recipes';
+import ErrorPage from './components/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
       {
         path: '/recipes/:id',
         element: <Recipes></Recipes>,
-        loader: ({params}) => fetch(`http://localhost:5000/recipes/${params.id}`)
+        loader: ({ params }) => fetch(`https://madchef-server-arafatdayan005.vercel.app/recipes/${params.id}`)
       },
       {
         path: '/login',
@@ -43,7 +45,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <RouterProvider router = {router} />
+    <RouterProvider router={router} />
   </>
 );
 

@@ -21,6 +21,7 @@ function RecipeCards({ data }) {
                     <div className='text-lg'>
                         <p>4. {ingredients[3]}</p>
                         <p>5. {ingredients[4]}</p>
+                        <p>6. {ingredients[5]}</p>
                     </div>
                 </div>
                 <p className='text-xl font-semibold mt-6'>Cooking Method: <br />

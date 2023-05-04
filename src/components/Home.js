@@ -9,7 +9,7 @@ function Home() {
     const [chefData, setChefData] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/details")
+        fetch("https://madchef-server-arafatdayan005.vercel.app/details")
             .then(res => res.json())
             .then(data => setChefData(data))
     }, [])
