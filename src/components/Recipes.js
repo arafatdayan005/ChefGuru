@@ -1,4 +1,5 @@
 import React from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useLoaderData, useParams } from 'react-router-dom'
 import RecipeCards from './RecipeCards';
 
@@ -8,7 +9,6 @@ function Recipes() {
     const { id, name, image, experiences, likes, recipes, description, recipelist } = chefData
 
     return (
-
         <>
             {/* Banner Section */}
             <section className='recipe flex justify-center gap-20 py-20'>
@@ -20,7 +20,7 @@ function Recipes() {
                     <h5 className='max-w-2xl text-lg text-gray-300 my-8'>{description}</h5>
                     <button className='px-8 bg-white text-red-500 py-4 font-bold rounded-full hover:bg-red-400 hover:text-white'>Contact Me</button>
                 </div>
-                <img className='h-96 w-[25%] rounded-full' src={image} alt="" />
+                <LazyLoadImage effect="blur" className='h-96 w-[25%] rounded-full' src={image} alt="" />
             </section>
 
             {/* My Recipes Section */}

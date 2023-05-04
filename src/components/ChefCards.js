@@ -1,11 +1,12 @@
 import React from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom'
 
 function ChefCards({ data }) {
     const { id, name, image, experiences, likes, recipes } = data
     return (
         <div className='text-white mb-8'>
-            <img className='h-[70%] w-full rounded-xl' src={image} alt="" />
+            <LazyLoadImage className='h-[70%] w-full rounded-xl' src={image} alt="" />
             <div className='flex relative'>
                 <div>
                     <h3 className='text-4xl font-semibold py-4'>{name}</h3>

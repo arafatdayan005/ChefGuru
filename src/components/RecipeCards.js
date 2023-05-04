@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
@@ -25,7 +26,7 @@ function RecipeCards({ data }) {
 
     return (
         <div className='shadow-lg shadow-red-300 rounded-xl'>
-            <img className='h-[40%] w-full rounded-xl' src={photo} alt="" />
+            <LazyLoadImage effect="blur" className='h-[40%] w-full rounded-xl' src={photo} alt="" />
             <div className='px-4'>
                 <h3 className='text-3xl font-semibold py-4 text-red-500'>{name}</h3>
                 <h5 className='text-xl font-semibold'>Ingredients:</h5>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Circles } from 'react-loader-spinner'
 import image from './../images/about.png'
 import cook1 from './../images/cooking-1.jpg'
@@ -41,7 +42,7 @@ function Home() {
                 </div>
 
                 <div className='relative flex justify-center'>
-                    <img className='absolute max-h-[110%] -top-7' src={image} alt="" />
+                    <LazyLoadImage className='absolute max-h-[110%] -top-7' src={image} alt="" />
                 </div>
             </section>
             {/* Our Chefs Section */}
@@ -79,7 +80,7 @@ function Home() {
 
                 <div className='grid grid-cols-2 gap-10 my-12'>
                     <div className='flex justify-end'>
-                        <img className='max-w-[90%] h-full rounded-xl' src={cook1} alt="" />
+                        <LazyLoadImage className='max-w-[90%] h-full rounded-xl' src={cook1} alt="" />
                     </div>
                     <div>
                         <div className='max-w-[90%] h-full p-12 shadow-xl rounded-xl'>
@@ -97,7 +98,7 @@ function Home() {
                             <button className='px-8 bg-red-500 text-white py-4 font-bold rounded-full hover:bg-red-600 mt-4'>Order now</button>
                         </div>
                     </div>
-                    <img className='max-w-[90%] h-full rounded-xl' src={cook2} alt="" />
+                    <LazyLoadImage className='max-w-[90%] h-full rounded-xl' src={cook2} alt="" />
                 </div>
             </section>
         </>
