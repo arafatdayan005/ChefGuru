@@ -3,7 +3,7 @@ import React from 'react'
 function Blog() {
   return (
     <>
-      <div className='bg-red-100 bg-opacity-50 pb-28 pt-12 text-center'>
+      <div className='bg-red-100 bg-opacity-50 pb-20 pt-16 text-center'>
         <h3 className='font-bold text-3xl'>Blogs</h3>
       </div>
       <div className='px-48 py-16'>

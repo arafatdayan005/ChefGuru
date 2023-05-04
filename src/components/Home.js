@@ -77,7 +77,7 @@ function Home() {
                     </div>
                     <div className='flex justify-end'>
                         <div className='max-w-[90%] h-full p-12 shadow-xl rounded-xl'>
-                            <h3 className='text-4xl font-serif font-semibold mb-6'>Over <span className='text-red-500 text-5xl'>250</span> Delicious & Tasty Recipes</h3>
+                            <h3 className='text-4xl font-serif font-semibold mb-6'>Get <span className='text-red-500 text-5xl'>Reservation</span>  for any upcoming event</h3>
                             <h4 className='text-2xl tracking-tighter font-semibold text-red-500'>Get 25% Discount</h4>
                             <h5 className='my-6 text-lg text-gray-500'>Our thai chefs are packed with energy and enthusiasm. Your dinner spread will never look, smell, or better. The recipes are for all seasons perfect for family gatherings and events</h5>
                             <button className='px-8 bg-red-500 text-white py-4 font-bold rounded-full hover:bg-red-600 mt-4'>Order now</button>
