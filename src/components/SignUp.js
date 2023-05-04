@@ -1,25 +1,57 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import google from './../images/google button.png'
-import github from './../images/github button.png'
+import { AuthContext } from '../providers/AuthProvider'
 
 function SignUp() {
     const [show, setShow] = useState(false)
+    const { createUser, updateUser } = useContext(AuthContext);
+
+    const handleSignUp = (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photo = form.photo.value;
+
+        createUser(email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+            });
+
+        updateUser(name, photo)
+            .then((userCredential) => {
+                // Profile updated!
+                const user = userCredential.user;
+                console.log(user)
+            }).catch((error) => {
+                // An error occurred
+                // ...
+            });
+    }
 
     return (
         <>
             <div className='w-96 m-auto mt-12 rounded-lg pb-8 shadow-lg shadow-green-500 px-4'>
                 <h2 className='text-center py-5 text-3xl text-green-400 font-extrabold '>Sign Up</h2>
                 <div className="flex flex-col">
-                    <form>
+                    <form onSubmit={handleSignUp}>
                         <label className='text-green-500' htmlFor="name"><b>User Name</b></label>
                         <input className='w-full px-3 py-4 rounded-lg border border-green-500 mb-4' type="text" placeholder="Enter Username" name="name" required />
-                        
+
                         <label className='text-green-500' htmlFor="email"><b>Email</b></label>
                         <input className='w-full px-3 py-4 rounded-lg border border-green-500 mb-4' type="email" placeholder="Enter Email" name="email" required />
 
                         <label className='text-green-500' htmlFor="psw"><b>Password</b></label>
-                        <input className='w-full px-3 py-4 rounded-lg border border-green-500' type={show ? "text" : "password"} placeholder="Enter Password" name="password" requigreen />
+                        <input className='w-full px-3 py-4 rounded-lg border border-green-500' type={show ? "text" : "password"} placeholder="Enter Password" name="password" required />
 
                         <p className='m-0 underline cursor-pointer inline-block mb-4' onClick={() => setShow(!show)}>
                             <small>
