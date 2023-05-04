@@ -20,7 +20,7 @@ function RecipeCards({ data }) {
             draggable: true,
             progress: undefined,
             theme: "colored",
-            });
+        });
     }
 
     return (

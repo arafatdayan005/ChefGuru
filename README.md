@@ -1,3 +1,14 @@
+# ChefGuru Website Project
+- Homepage includes banner, some section and list of some chefs.
+- View Recipe button will send the user to recipe page.
+- The recipe page includes chef's info and his recipes.
+- Heart icon will add the recipe to favorite list.
+- Blogs shows some question related to react.
+- User can Register using Email.
+- User can Login using Email,Google, Github.
+
+Live Website link: https://chefguru-8b9f1.web.app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
