@@ -1,10 +1,27 @@
 import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 function RecipeCards({ data }) {
     const [heart, setHeart] = useState(true)
 
     const { id, name, photo, ingredients, cookingMethod, rating } = data
+
+    const favorite = () => {
+        setHeart(!heart)
+        toast.error('Added to favorite', {
+            icon: "🤍",
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
+    }
 
     return (
         <div className='shadow-lg shadow-red-300 rounded-xl'>
@@ -30,13 +47,13 @@ function RecipeCards({ data }) {
                     </span>
                 </p>
                 <p className='text-xl font-semibold mt-6'>Ratings: {rating}</p>
-                <div className='flex justify-center items-center text-4xl mt-4 -mb-24 text-red-500' >
-                    <button onClick={() => setHeart(!heart)} disabled={!heart}>
+                <div className='flex justify-center items-center mt-4 -mb-24 text-red-500' >
+                    <button onClick={favorite} className='text-4xl' disabled={!heart}>
                         {
                             heart ? <AiOutlineHeart /> : <AiFillHeart />
                         }
                     </button>
-
+                    <ToastContainer />
                 </div>
             </div>
         </div>
