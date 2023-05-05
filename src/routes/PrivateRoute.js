@@ -14,7 +14,7 @@ function PrivateRoute({ children }) {
         return <Circles
         height="80"
         width="80"
-        color="#4fa94d"
+        color="#ff0000"
         ariaLabel="circles-loading"
         wrapperStyle={{}}
         wrapperClass=""

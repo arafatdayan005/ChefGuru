@@ -26,11 +26,11 @@ function RecipeCards({ data }) {
 
     return (
         <div className='shadow-lg shadow-red-300 rounded-xl'>
-            <LazyLoadImage effect="blur" className='h-[40%] w-full rounded-xl' src={photo} alt="" />
+            <LazyLoadImage className='h-[40%] w-full rounded-xl' src={photo} alt="" />
             <div className='px-4'>
                 <h3 className='text-3xl font-semibold py-4 text-red-500'>{name}</h3>
                 <h5 className='text-xl font-semibold'>Ingredients:</h5>
-                <div className='flex justify-center gap-48'>
+                <div className='flex flex-wrap justify-center gap-48'>
                     <div className='text-lg'>
                         <p>1. {ingredients[0]}</p>
                         <p>2. {ingredients[1]}</p>

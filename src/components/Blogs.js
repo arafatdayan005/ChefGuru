@@ -1,4 +1,7 @@
 import React from 'react'
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 function Blog() {
   return (
@@ -6,7 +9,7 @@ function Blog() {
       <div className='bg-red-100 bg-opacity-50 pb-20 pt-16 text-center'>
         <h3 className='font-bold text-3xl'>Blogs</h3>
       </div>
-      <div className='px-48 py-16'>
+      <div ref={ref} className='px-48 py-16'>
         <div className='my-6'>
           <h3 className="text-2xl font-semibold">1. Tell us the differences between uncontrolled and controlled components</h3>
           <p className='py-4 text-lg'>
@@ -36,6 +39,11 @@ function Blog() {
             We create custom hooks to reuse stateful logic across multiple components and avoid repeating code. Custom hooks are useful when we have complex logic that needs to be shared across multiple components.
           </p>
         </div>
+      </div>
+      <div className='flex justify-center mb-20'>
+        <Pdf targetRef={ref} filename="ChefGuru-Blogs.pdf">
+          {({ toPdf }) => <button className='px-8 bg-red-500 text-white py-4 mt-6 font-bold rounded-full hover:bg-red-600' onClick={toPdf}>Generate Pdf</button>}
+        </Pdf>
       </div>
     </>
   )

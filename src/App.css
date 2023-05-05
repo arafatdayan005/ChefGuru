@@ -29,3 +29,17 @@
     background-position: center;
     background-size: cover;
 }
+
+.bg-circle{
+    background-image: url("./images/circle.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.login-bg{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("./images//login-banner.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

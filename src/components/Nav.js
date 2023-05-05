@@ -5,6 +5,7 @@ import { AuthContext } from '../providers/AuthProvider'
 
 function Nav() {
     const { user, logOut } = useContext(AuthContext)
+    console.log(user?.displayName)
 
     const handleLogOut = () => {
         logOut()
@@ -16,12 +17,12 @@ function Nav() {
     }
 
     return (
-        <div className='flex justify-between items-center bg-red-500 text-white'>
+        <div className='px-12 flex flex-wrap justify-between items-center bg-red-500 text-white'>
             <div className='flex items-center'>
-                <img className='h h-24 w-32' src={Logo} alt="" />
+                <img className='h-24 w-32' src={Logo} alt="" />
                 <div>
-                    <p className='text-2xl font-extrabold tracking-widest leading-none'>HOT</p>
-                    <p className='text-2xl font-extrabold tracking-widest lead leading-none'>CHEF</p>
+                    <p className='text-2xl font-extrabold leading-none'>Chef</p>
+                    <p className='text-2xl font-extrabold lead leading-none'>Guru</p>
                 </div>
             </div>
             <div className='space-x-8 font-bold tracking-wide text-xl'>
@@ -31,7 +32,7 @@ function Nav() {
             </div>
             <div className='font-bold tracking-wide text-xl'>
                 {
-                    user ? <button onClick={handleLogOut}>logout</button> :
+                    user && user.displayName ? <button onClick={handleLogOut}> <img  className='h-12 w-12 rounded-full' title={user.displayName} src={user.photoURL} alt="" /> </button> :
                         <NavLink className={({ isActive }) => isActive ? "underline" : ""} to="/login">Login</NavLink>
                 }
 

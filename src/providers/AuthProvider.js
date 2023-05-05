@@ -11,6 +11,7 @@ const githubProvider = new GithubAuthProvider();
 function AuthProvider({ children }) {
     const [user, setUser] = useState(null)
     const [loader, setLoader] = useState(true)
+    const [reload, setReload] = useState(false)
 
     const createUser = (email, password) => {
         setLoader(true);
@@ -49,9 +50,10 @@ function AuthProvider({ children }) {
             return unsubscribe();
         }
 
-    }, [])
+    }, [reload])
 
     const updateUser = (name, photo) => {
+        setLoader(true);
         return updateProfile(auth.currentUser, { displayName: name, photoURL: photo })
     }
 
@@ -68,7 +70,8 @@ function AuthProvider({ children }) {
         signOut,
         logOut,
         user,
-        loader
+        loader,
+        setReload
     }
 
     return (
